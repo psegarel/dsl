@@ -322,7 +322,7 @@ function advagg_cron() {
   // Prune old bundles
   $bundles_removed += db_result(db_query("
     SELECT COUNT(DISTINCT bundle_md5) AS advagg_count
-    FROM advagg_bundles
+    FROM {advagg_bundles}
     WHERE timestamp < %d
   ", $max_bundle_time));
   $results = db_query("DELETE FROM {advagg_bundles} WHERE timestamp < %d", $max_bundle_time);
@@ -445,14 +445,16 @@ function advagg_get_root_files_dir($reset = FALSE) {
   file_check_directory($custom_path, FILE_CREATE_DIRECTORY);
 
   // Get path name
-  $conf_path = conf_path();
-  if (is_link($conf_path)) {
-    $path = readlink($conf_path);
+  if (!variable_get('advagg_no_conf_path', FALSE)) {
+    $conf_path = conf_path();
+    if (is_link($conf_path)) {
+      $path = readlink($conf_path);
+    }
+    $conf_path = str_replace("\\", '/', $conf_path);
+    $conf_path = explode('/', $conf_path);
+    $conf_path = array_pop($conf_path);
+    $custom_path = $custom_path . '/' . $conf_path;
   }
-  $conf_path = str_replace("\\", '/', $conf_path);
-  $conf_path = explode('/', $conf_path);
-  $conf_path = array_pop($conf_path);
-  $custom_path = $custom_path . '/' . $conf_path;
   file_check_directory($custom_path, FILE_CREATE_DIRECTORY);
 
   $css_path = $custom_path . '/advagg_css';
@@ -527,6 +529,44 @@ function advagg_css_array_fixer(&$css_func) {
           unset($css_func[$k][$ke][$file]);
         }
       }
+    }
+  }
+}
+
+/**
+ * Remove css files from the array if there is a color module equivalent of it.
+ *
+ * @param $css_func
+ *   Drupal CSS array.
+ */
+function advagg_color_css(&$css) {
+  if (!module_exists('color') || empty($css['all']['theme'])) {
+    return;
+  }
+  $file_path = file_directory_path();
+
+  // Find all color css files.
+  $files = array();
+  foreach ($css['all']['theme'] as $file => $preprocess) {
+    if (strpos($file, $file_path) === FALSE) {
+      continue;
+    }
+    if (strpos($file, '/color/') === FALSE) {
+      continue;
+    }
+    $files[basename($file)] = $file;
+  }
+
+  // Return if no color css files are found.
+  if (empty($files)) {
+    return;
+  }
+
+  // Remove css files from the stack if there is a color variant of it.
+  foreach ($css['all']['theme'] as $file => $preprocess) {
+    $basename = basename($file);
+    if (isset($files[$basename]) && !in_array($file, $files)) {
+      unset($css['all']['theme'][$file]);
     }
   }
 }
@@ -692,6 +732,7 @@ function advagg_processor(&$variables) {
   }
   $css_conditional_styles = !empty($variables['conditional_styles']) ? $variables['conditional_styles'] : '';
   $css_styles = $variables['styles'];
+  advagg_color_css($css);
 
   // Try cache.
   if (variable_get('advagg_use_full_cache', ADVAGG_USE_FULL_CACHE)) {
