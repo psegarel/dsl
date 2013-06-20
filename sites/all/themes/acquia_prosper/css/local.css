@@ -1,0 +1,385 @@
+/* $Id: local-sample.css,v 1.2 2010/09/17 21:36:06 eternalistic Exp $ */
+
+/****************************/
+/* LOCAL CSS                */
+/****************************/
+
+/* Put your custom CSS and CSS overrides in this file and  */
+/* rename it local.css.  By restricting your CSS changes   */
+/* to local.css, your changes will not be overwritten when */
+/* upgrading to a new version of this theme.  You can also */
+/* use a local-rtl.css file for the equivalent in RTL.     */
+
+/* Steps to activate local.css:                       */
+/* 1. Add your custom CSS to this file                */
+/* 2. Rename this file to local.css                   */
+/* 3. Clear cached data at admin/settings/performance */
+
+/* Colors 
+----------------------------------------------------------------------------*/
+
+body,															
+.header-top-wrapper,
+.header-group-wrapper													
+																	{	background: #f7f7f7;
+																	}
+html ,
+.footer-wrapper	, 
+.footer-message-wrapper												{	background: #444;
+																	}
+
+div a																{	color: #444;
+																	}
+																	
+.footer-message-wrapper												{	border-top: 5px solid #fff;
+																	}
+																	
+.staff-display,
+.projects-display													{	border-left: 1px dotted #444;
+																	}
+
+.service-request	 												{	color: #fff;
+																		border-bottom: 1px solid #444;
+																		border-right: 1px solid #444;
+																		background: #444;
+																	}
+																	
+.header-menu a:link, .header-group-wrapper a:visited 				{	color: #fff;
+																	}	
+															
+.header-menu ul li a												{	color: #fff;
+																	}
+.header-menu ul li .active											{	color: #fff;
+																		background: #888;
+																	}	
+																	
+.header-menu ul li.leaf a:hover										{	color: #fff;
+																		background: #444;
+																	}
+																	
+.language-switcher ul li.en a img									{	border-right: 1px solid #888;
+																	}
+.your-business-red p,																	
+h1 , h2 , h3 , h4													{	color: #ee0000;
+																	}													
+
+h3.homepage-services-title											{	color: #444;
+																	}
+.about-us-canvas p,
+.projects-canvas p,	
+.service-canvas p													{	color: #777;
+																	}	
+																	
+.started-big-red p, .started-big-red-zh p							{	color: #ee0000;
+																	}	
+
+.prices-layout th													{	background: #ee0000;
+																		color: #fafafa;
+																		border-right: 1px solid #fff;
+																	}	
+
+.prices-layout tr.odd td											{	background: #fff;
+																		border: 1px solid #fff;
+																	}
+
+.prices-layout tr td												{	background: #eee;
+																		border: 1px solid #fff;
+																	}	
+																	
+.homepage-services-icon img 										{	border: 1px solid #fff;
+																	}							
+/* Typography 
+----------------------------------------------------------------------------*/	
+h1.title,																	
+h2.block-title,
+h3																	{	font-size: 1.6em;
+																		font-weight: bold;
+																	}														
+.about-us-canvas p,
+.projects-canvas p,	
+.service-canvas p													{	font-size: 1.2em;
+																		font-style: italic;
+																		width: 90%;
+																		line-height: 130%;
+																		font-family:Arial Narrow , Arial , Helvetica;
+																	}	
+																	
+.header-group-wrapper ul li.leaf a:hover							{	text-decoration: none;
+																	}
+																	
+.customer-name														{	background: url('/sites/default/files/images/layout/disc.png');
+																		background-repeat: no-repeat;
+																		padding: 0 0 0 1.5em;
+																	}
+
+.prices-layout th													{	font-weight: bold;
+																		padding: .4em;
+																		text-align: center;
+																	}
+
+.prices-layout 	td													{	text-align: center;
+																	}
+/* End Typography																	
+----------------------------------------------------------------------------*/	
+
+
+
+
+															
+																	
+/* Layout 
+----------------------------------------------------------------------------*/
+#page-inner 														{	border: 0;
+																		margin-bottom: 0;
+																		padding: 0;
+																	}
+																	
+.footer-message-inner												{	padding: 2em 1em 10em 1em;
+																		display: block;
+																	}
+
+#main-wrapper 														{	padding: 0;
+																	}
+																	
+.header-group-inner,
+.block,
+.main-inner,
+.header-group-wrapper 												{	margin: 0;
+																		padding: 0;
+																	}
+
+.header-primary-menu-wrapper 										{	display: none;
+																	}
+																	
+.header-logo														{	margin-top: -.8em;
+																	}																	
+
+.header-menu-top													{	background: url("/sites/default/files/images/layout/menutop01.png");
+																		background-repeat: no-repeat;
+																		height: 48px;
+																		margin: 2em 0 0 0;
+																		padding-top: -1em;
+																	}																	
+
+.header-main-background												{	background: url("/sites/default/files/images/layout/deltaHeader04.png");
+																		background-repeat: no-repeat;
+																		height: 420px;
+																		margin-top: 1em;
+																	}																	
+																																		
+.header-slogan														{	display: block;
+																		margin: 12em 0 0 16em;
+																	}
+																	
+.header-monitor-block 												{	background: url("/sites/default/files/images/layout/deltaHeader03.png");
+																		background-repeat: no-repeat;
+																		height: 500px;
+																		width: 960px;
+																		display: block;
+																		padding: 16px 0 0 0;
+																		margin-left: -.5em;
+																	}
+																	
+.your-business-red p												{	width: 250px;
+																		display: block;
+																		font-weight: 600;
+																		word-spacing: .1em;
+																	}
+
+
+.header-logo														{	display: block;
+																		margin-bottom: -1.4em;
+																	}
+																	
+.header-site-preview												{	padding: 47px 0 0 82px;
+																	}
+																																		
+.header-statement p													{	color: black;
+																		font-size: 1.2em;
+																		font-weight: normal;
+																		font-style: italic;
+																		padding: 0 1em 0 0;
+																		margin: 0;
+																		font-family:Arial Narrow , Arial , Helvetica;
+																	}
+																																		
+.started-big-red p, .started-big-red-zh p							{	font-family: Myriad Pro , Helvetica Neue , Helvetica;
+																		font-size: 4.5em;
+																		font-weight: bold;
+																		padding: 2em 0 .1em 0;
+																		margin: 0;
+																	}
+																																		
+.started-big-red p													{	line-height: 80%;
+																	}
+																																		
+.started-big-red-zh	p												{	line-height: 100%;
+																	}	
+
+.jigsaw-red															{	float: right;
+																		padding: 2em 4em 0 0;
+																	}
+																	
+.header-top-region 													{	padding: 0;
+																	}
+
+.contact-page-form													{	margin-top: -4em;
+																	}
+.header-menu ,
+.language-switcher													{	margin-top: 10px;
+																	}
+																	
+.header-menu 	 													{	/* float: right; */
+																	}
+																	
+.header-menu ul li 													{	display: inline;
+																		margin-right: .2em;
+																	}
+																	
+.header-menu ul li a												{	padding: .4em 2.5em .2em 2.5em;
+																		border-radius: 10px;
+																		-moz-border-radius: 10px;
+																	}																													
+.header-menu ul li a.active											{	padding: .4em 2.5em .2em 2.5em;
+																		border-radius: 10px;
+																		-moz-border-radius: 10px;
+																	}																																		
+.footer-message-wrapper												{	margin-top: 200px;
+																		padding-bottom: 10em;
+																	}
+																	
+.views-view-grid tbody tr td										{	vertical-align: top;
+																	}
+																																		
+.language-switcher ul 												{	margin: 0;
+																	}
+																	
+.language-switcher ul li											{	display: inline;
+																	}
+																	
+.language-switcher ul li a img										{	padding: .2em 2em .2em 2em;
+																	}		
+
+	/* Homepage 
+----------------------------------------------------------------------------*/
+.homepage-services													{	margin: 0 0 1em 0;
+																	}
+																	
+.homepage-services	a:hover											{	text-decoration: none;
+																	}																						
+.homepage-services	.views-view-grid tbody tr td					{	background: url('/sites/default/files/images/layout/bg-homepage-service.png');
+																		background-repeat: no-repeat;
+																		height: 420px;
+																		width: 310px;
+																		padding: 2.5em 3em 1em 2em;
+																	}
+.homepage-services-icon , .homepage-services-title, 
+.homepage-services-body												{	text-align: center;
+																	}
+
+.homepage-services-icon												{	margin-bottom: 1em;
+																	}
+																	
+.homepage-services-title											{	margin: 0 0 .8em 0;
+																		font-size: 1.4em;
+																		font-weight: bold;
+																	}
+
+.homepage-services-body												{	clear: both;
+																		width: 260px;
+																	}
+
+.homepage-services-body	p											{	margin: .5em 0 1em 0 ;
+																		line-height: 140%;
+																	}
+																	
+.homepage-services-item	.field-item									{	background: url('/sites/default/files/images/layout/marker.png');
+																		background-repeat: no-repeat;
+																		padding: 0 0 0 2em;
+																		margin: .3em 0 .5em 4.4em;
+																	}													
+
+.service-request													{	display: block;
+																		padding: 1em 1em .2em 1em;
+																		margin: 2em 2em 2em 2em;
+																		border-radius: 6px;
+																		-moz-border-radius: 6px;
+																		text-transform: uppercase;
+																		font-size: .8em;
+																		text-align: center;
+																		width: 200px;
+																	}
+	/*  End Homepage
+----------------------------------------------------------------------------*/
+
+
+
+	/* Service 
+----------------------------------------------------------------------------*/
+																	
+.service-webform													{	padding: 2em 4em 4em 0em;
+																		width: 60%;
+																	}
+
+	/* End Service 
+----------------------------------------------------------------------------*/
+
+
+
+
+
+
+	/* Projects 
+----------------------------------------------------------------------------*/
+.projects-canvas p													{	margin-top: 2em;
+																	}
+																	
+.projects-customers													{	padding: 1em;
+																		margin: 2em 0 0 0em;
+																		border-radius: 5px;
+																		-moz-border-radius: 5px;
+																	}
+
+.project-title														{	margin-top: 1em;
+																		font-size: 1.4em;
+																	}
+
+.project-text p														{	font-size: 1em;
+																		font-weight: normal;
+																		font-style: normal;
+																		font-family: "Myriad Pro" , "Arial" , "Helvetica";
+																		width: 240px;
+																		padding: 0;
+																		margin: 0;
+																	}
+
+
+.projects-display													{	padding-left: 2em;
+																	}
+	/* End Projects 
+----------------------------------------------------------------------------*/
+
+
+
+
+
+
+	/* About Us 
+----------------------------------------------------------------------------*/
+.about-us-canvas p													{	margin:0 0 1em 0;
+																		width: 60%;
+																	}
+
+.staff-display														{	padding: 2em 4em 4em 4em;
+																		font-family: "Myriad Pro" , "Arial" , "Helvetica";
+																		font-style: normal;
+																	}
+
+.staff-name															{	margin: 0;
+																		padding: 0;
+																		font-size: 1.2em;
+																	}
+	/* End About US 
+----------------------------------------------------------------------------*/
+
+																																	
